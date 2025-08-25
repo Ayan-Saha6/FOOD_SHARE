@@ -36,7 +36,7 @@ def signin_view(request):
             if user is not None:
                 login(request, user)
 
-                # ✅ Redirect based on role
+                # Redirect based on role
                 if user.role == 'restaurant':
                     return redirect('/restaurant/dashboard/')
                 elif user.role == 'ngo':
