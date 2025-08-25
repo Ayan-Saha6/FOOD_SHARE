@@ -11,7 +11,7 @@ from .views import (
     my_claims_view,
     verify_pickup_view,
     mark_as_delivered_view,
-    get_started  # ✅ import added
+    get_started 
 )
 
 urlpatterns = [
@@ -30,6 +30,6 @@ urlpatterns = [
     path('verify-pickup/<int:donation_id>/', verify_pickup_view, name='verify-pickup'),
     path('mark-delivered/<int:donation_id>/', mark_as_delivered_view, name='mark-as-delivered'),
 
-    # ✅ Smart yellow button redirect view
+   
     path('get-started/', get_started, name='get_started'),
 ]
