@@ -10,7 +10,7 @@ def home_view(request):
     return render(request, 'home.html')
 
 
-# ✅ Smart redirect for yellow "Get Started" button
+# Smart redirect for yellow "Get Started" button
 def get_started(request):
     user = request.user
 
