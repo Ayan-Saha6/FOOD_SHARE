@@ -22,10 +22,10 @@ class FoodDonation(models.Model):
     delivery_photo = models.ImageField(upload_to='delivery_photos/', blank=True, null=True)
     delivered_at = models.DateTimeField(null=True, blank=True)
 
-    qr_code = models.ImageField(upload_to='qr_codes/', blank=True, null=True)  # ✅ NEW FIELD
+    qr_code = models.ImageField(upload_to='qr_codes/', blank=True, null=True)  
 
 
-    # ✅ Correctly indented
+    
     claimed_by = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
@@ -39,7 +39,7 @@ class FoodDonation(models.Model):
     
 
     def generate_qr_code(self):
-        url = f"http://127.0.0.1:8000/verify-pickup/{self.id}/"  # ✅ Use your domain in production
+        url = f"http://127.0.0.1:8000/verify-pickup/{self.id}/"  
         qr = qrcode.make(url)
         blob = BytesIO()
         qr.save(blob, format='PNG')
